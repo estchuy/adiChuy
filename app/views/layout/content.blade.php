@@ -39,17 +39,12 @@
         <!-- Navigation Bar-->
         <header id="topnav">
             <div class="topbar-main">
+              <div>
+                <a href="/">
+                    <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/LogoWithText2.png" height="145" style="position: absolute;z-index: 100;padding-left:20px;">
+                </a>
+              </div>
                 <div class="container">
-
-                    <!-- Logo container-->
-                    <div class="logo">
-                        <a href="/" class="logo">
-                            <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/LogoWithText.png" width="25" height="30">
-                            &nbsp;&nbsp;
-                            <span>Asesoría de Inmuebles</span>
-                        </a>
-                    </div>
-                    <!-- End Logo container-->
 
 
                     <div class="menu-extras">
@@ -61,110 +56,7 @@
                                          <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
-                                <li class="dropdown hidden-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-lg">
-                                        <li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>
-                                        <li class="list-group nicescroll notification-list">
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left p-r-10">
-                                                    <em class="fa fa-diamond fa-2x text-primary"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left p-r-10">
-                                                    <em class="fa fa-cog fa-2x text-custom"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading">New settings</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left p-r-10">
-                                                    <em class="fa fa-bell-o fa-2x text-danger"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading">Updates</h5>
-                                                    <p class="m-0">
-                                                        <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left p-r-10">
-                                                    <em class="fa fa-user-plus fa-2x text-info"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading">New user registered</h5>
-                                                    <p class="m-0">
-                                                        <small>You have 10 unread messages</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="pull-left p-r-10">
-                                                    <em class="fa fa-diamond fa-2x text-primary"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                            <a href="javascript:void(0);" class="list-group-item">
-                                                <div class="media">
-                                                    <div class="pull-left p-r-10">
-                                                     <em class="fa fa-cog fa-2x text-custom"></em>
-                                                    </div>
-                                                    <div class="media-body">
-                                                      <h5 class="media-heading">New settings</h5>
-                                                      <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                    </div>
-                                              </div>
-                                           </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" class="list-group-item text-right">
-                                                <small class="font-600">See all notifications</small>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
 
                                 <li class="dropdown">
                                     <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
@@ -200,65 +92,42 @@
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
+            <?php
+              $last10homes = Home::orderBy('created_at', 'desc')->take(10)->get();
+            ?>
             <div class="wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card-box">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="card-box">
 
-                                    <!--<p class="text-muted m-b-30 font-13">Add captions to your slides easily with the <code>.carousel-caption</code> element within any <code>.item</code>. </p>
+                          <h2 class=" m-t-0 header-title"><b>Ultimos Ingresos</b></h2>
 
-                                    <!-- START carousel-->
-                                    <div id="carousel-example-captions" data-ride="carousel" class="carousel slide">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-example-captions" data-slide-to="1"></li>
-                                            <li data-target="#carousel-example-captions" data-slide-to="2"></li>
-                                        </ol>
-                                        <div role="listbox" class="carousel-inner">
-                                            <div class="item active">
-                                                <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/big/img2.jpg" alt="First slide image">
-                                                <div class="carousel-caption">
-                                                    <h3 class="text-white font-600">First slide label</h3>
-                                                    <p>
-                                                        Nulla vitae elit libero, a pharetra augue mollis interdum.
-                                                    </p>
-                                                    <button class="btn btn-default waves-effect waves-light" type="button"><i class="fa fa-info-circle"></i> Contactenos</button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/big/img3.jpg" alt="Second slide image">
-                                                <div class="carousel-caption">
-                                                    <h3 class="text-white font-600">Second slide label</h3>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/big/img4.jpg" alt="Third slide image">
-                                                <div class="carousel-caption">
-                                                    <h3 class="text-white font-600">Third slide label</h3>
-                                                    <p>
-                                                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" class="fa fa-angle-left"></span> <span class="sr-only">Previous</span> </a>
-                                        <a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> <span aria-hidden="true" class="fa fa-angle-right"></span> <span class="sr-only">Next</span> </a>
-                                    </div>
-                                    <!-- END carousel-->
+                          <div class="owl-carousel owl-theme" id="owl-multi">
+                            @foreach($last10homes as $home)
+                              <div class="item">
+                                <div class="thumbnail">
+                                  <img class="img-responsive" src="assets/images/big/img3.jpg" onerror="this.src='packages/assets/images/greyHome.png';">
+                                  <div class="caption">
+                                      <h3>{{$home->nombre}}</h3>
+                                      <p>
+                                          Área Construida: {{$home->construccion}} <b>m<sup>2</sup></b><br>
+                                          Área del Terreno: {{$home->terreno}} <b>m<sup>2</sup></b><br>
+                                          Habitaciones: 3<br>
+                                          Baños: {{$home->banos}}<br>
+
+                                      </p>
+                                      <p>
+                                          <a href="/home/{{$home->id}}/detail" class="btn btn-info waves-effect waves-light"> <i class="fa fa-info m-r-5"></i> <span>Detalles</span> </a>
+                                      </p>
+                                  </div>
                                 </div>
-
-                                <div class="col-md-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                              </div>
+                            @endforeach
+                          </div>
+                      </div>
+                  </div>
+              </div>    
      
 
                 
