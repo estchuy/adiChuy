@@ -16,4 +16,4 @@ Route::get('/', function()
 	return View::make('layout.content');
 });
 
-Route::get('proyecto/{id}/info', 'ClientsController@edit');
+Route::get('proyecto/{id}/info', 'ProjectsController@edit');

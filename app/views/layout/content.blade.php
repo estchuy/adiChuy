@@ -30,6 +30,11 @@
         <![endif]-->
 
         <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/js/modernizr.min.js"></script>
+        <style type="text/css">
+            .degradadoHor {
+              background: linear-gradient(#c0c0c0, #eeeeee);
+            }
+        </style>
     </head>
 
 
@@ -38,17 +43,20 @@
 
         <!-- Navigation Bar-->
         <header id="topnav">
-            <div class="topbar-main">
-              <div>
-                <a href="/">
-                    <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/LogoWithText2.png" height="145" style="position: absolute;z-index: 100;padding-left:20px;">
-                </a>
-              </div>
+            <div class="topbar-main degradadoHor">
                 <div class="container">
 
-
+                    <!-- Logo container-->
+                    <div class="">
+                        <a href="/" class="logo" style="margin-top: 4px">
+                            <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/LogoWithText.png" height="50">
+                        </a>
+                    </div>
+                    <!-- End Logo container-->
                     <div class="menu-extras">
-
+                         <ul class="nav navbar-nav navbar-left pull-left logo" style="margin-top: 10px; padding-left:10px; color:#306E8C !important;">
+                                Asesoria de Inversiones
+                        </ul>
                         <ul class="nav navbar-nav navbar-right pull-right">
                                 <li>
                                     <form role="search" class="navbar-left app-search pull-left hidden-xs">
@@ -97,6 +105,7 @@
             ?>
             <div class="wrapper">
             <div class="container">
+                 @yield("content")
               <div class="row">
                   <div class="col-sm-12">
                       <div class="card-box">
@@ -137,7 +146,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-6">
-                                DySChuy 2016 www.estuardochuy.com
+                                DySChuy 2016
                             </div>
                             <div class="col-xs-6">
                                 <ul class="pull-right list-inline m-b-0">
