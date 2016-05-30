@@ -59,7 +59,7 @@ return array(
 			'username'  => 'sqladmin',
 			'password'  => 'CHester2685',
 			'charset'   => 'utf8',
-			'collation' => '',
+			'collation' => 'utf8_general_ci',
 			'prefix'    => '',
 		),
 
