@@ -54,12 +54,12 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'      => 'ec2-52-37-134-33.us-west-2.compute.amazonaws.com',
+			'database'  => 'adi',
+			'username'  => 'sqladmin',
+			'password'  => 'CHester2685',
 			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
+			'collation' => '',
 			'prefix'    => '',
 		),
 

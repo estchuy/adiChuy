@@ -27,6 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('machine1'),
+	'production' => array('ip-172-31-29-47'),
 
 ));
 
