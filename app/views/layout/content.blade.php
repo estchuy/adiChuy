@@ -30,6 +30,11 @@
         <![endif]-->
 
         <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/js/modernizr.min.js"></script>
+        <style type="text/css">
+            .degradadoHor {
+              background: linear-gradient(#c0c0c0, #eeeeee);
+            }
+        </style>
     </head>
 
 
@@ -38,17 +43,20 @@
 
         <!-- Navigation Bar-->
         <header id="topnav">
-            <div class="topbar-main">
-              <div>
-                <a href="/">
-                    <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/LogoWithText2.png" height="145" style="position: absolute;z-index: 100;padding-left:20px;">
-                </a>
-              </div>
+            <div class="topbar-main degradadoHor">
                 <div class="container">
 
-
+                    <!-- Logo container-->
+                    <div class="">
+                        <a href="/" class="logo" style="margin-top: 4px">
+                            <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/packages/assets/images/LogoWithText.png" height="50">
+                        </a>
+                    </div>
+                    <!-- End Logo container-->
                     <div class="menu-extras">
-
+                         <ul class="nav navbar-nav navbar-left pull-left logo" style="margin-top: 10px; padding-left:10px; color:#306E8C !important;">
+                                Asesoria de Inversiones
+                        </ul>
                         <ul class="nav navbar-nav navbar-right pull-right">
                                 <li>
                                     <form role="search" class="navbar-left app-search pull-left hidden-xs">
@@ -92,52 +100,20 @@
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
-            <?php
-              $last10homes = Home::orderBy('created_at', 'desc')->take(10)->get();
-            ?>
-            <div class="wrapper">
-            <div class="container">
-              <div class="row">
-                  <div class="col-sm-12">
-                      <div class="card-box">
+              <div class="content-page">
+                <!-- Start content -->
+                <div class="wrapper">
+                    <div class="container">
+                       @yield("content")
+                    </div> <!-- container -->
 
-                          <h2 class=" m-t-0 header-title"><b>Ultimos Ingresos</b></h2>
-
-                          <div class="owl-carousel owl-theme" id="owl-multi">
-                            @foreach($last10homes as $home)
-                              <div class="item">
-                                <div class="thumbnail">
-                                  <img class="img-responsive" src="assets/images/big/img3.jpg" onerror="this.src='packages/assets/images/greyHome.png';">
-                                  <div class="caption">
-                                      <h3>{{$home->nombre}}</h3>
-                                      <p>
-                                          Área Construida: {{$home->construccion}} <b>m<sup>2</sup></b><br>
-                                          Área del Terreno: {{$home->terreno}} <b>m<sup>2</sup></b><br>
-                                          Habitaciones: 3<br>
-                                          Baños: {{$home->banos}}<br>
-
-                                      </p>
-                                      <p>
-                                          <a href="/home/{{$home->id}}/detail" class="btn btn-info waves-effect waves-light"> <i class="fa fa-info m-r-5"></i> <span>Detalles</span> </a>
-                                      </p>
-                                  </div>
-                                </div>
-                              </div>
-                            @endforeach
-                          </div>
-                      </div>
-                  </div>
-              </div>    
-     
-
-                
-                      <!-- @yield("content") -->
+                </div> <!-- content -->
             <!-- Footer -->
                 <footer class="footer text-right">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-6">
-                                DySChuy 2016 www.estuardochuy.com
+                                DySChuy 2016
                             </div>
                             <div class="col-xs-6">
                                 <ul class="pull-right list-inline m-b-0">
