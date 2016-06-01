@@ -1,3 +1,4 @@
+@extends("layout.content")
 @section('content')
 
 <div class="row">
@@ -8,7 +9,7 @@
 
                 <ul class="list-inline status-list m-t-20">
                     <li>
-                        <h3 class="text-primary m-b-5">456</h3>
+                        <h3 class="text-primary m-b-5">{{$projectInfo}}</h3>
                         <p class="text-muted">Followings</p>
                     </li>
 

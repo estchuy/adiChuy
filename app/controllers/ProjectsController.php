@@ -55,8 +55,8 @@ class ProjectsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$project = "";//Home::where('project_id', $id)->first();
-		$this->layout->content = View::make('project.edit')            
+		$project = "chuy RULES";//Home::where('project_id', $id)->first();
+		return View::make('project.edit')            
 		->with('projectInfo', $project);
 	}
 

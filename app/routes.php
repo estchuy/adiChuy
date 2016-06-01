@@ -13,7 +13,9 @@
 
 Route::get('/', function()
 {
-	return View::make('layout.content');
+	return View::make('layout.home');
+	//$thisView = ;
+	//return $this->layout->content = View::make('layout.home');
 });
 
 Route::get('proyecto/{id}/info', 'ProjectsController@edit');
