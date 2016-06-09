@@ -54,9 +54,16 @@
                     </div>
                     <!-- End Logo container-->
                     <div class="menu-extras">
-                         <ul class="nav navbar-nav navbar-left pull-left logo" style="margin-top: 10px; padding-left:10px; color:#306E8C !important;">
+                        <span class="visible-xs">
+                            <ul class="nav navbar-nav navbar-left pull-left logo" style="margin-top: 10px; padding-left:10px; color:#306E8C !important;font-size: 10px;">
                                 Asesoria de Inversiones
-                        </ul>
+                            </ul>
+                        </span>
+                        <span class="hidden-xs">
+                            <ul class="nav navbar-nav navbar-left pull-left logo" style="margin-top: 10px; padding-left:10px; color:#306E8C !important;">
+                                Asesoria de Inversiones
+                            </ul>
+                        </span>
                         <ul class="nav navbar-nav navbar-right pull-right">
                                 <li>
                                     <form role="search" class="navbar-left app-search pull-left hidden-xs">
